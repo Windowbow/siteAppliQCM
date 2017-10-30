@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+
+
+{% if q is empty %}
+<h2> liste vide </h2>
+{{propQuestion.save}}
+
+{% else %}
+{{q}}
+{% endif %}
+
+<form action= {% url "prop" %} method="post">
+
+    {% csrf_token %}
+
+    {{ propQuestion.as_p }}
+
+    <input type="submit" value="Submit" />
+
+</form>
+  </body>
+</html>
