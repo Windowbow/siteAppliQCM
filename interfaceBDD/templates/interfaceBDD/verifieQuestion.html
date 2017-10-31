@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "interfaceBDD/css/verifieQuestion.css" %} ">
+    <style></style>
+  </head>
+  <body>
+
+{% for test in allTests %}
+
+    <div class="test">
+
+        <p>{{ test.question }}</p>
+
+        <p>{{ test.proposition_1 }}</p>
+        <p>{{ test.proposition_2 }}</p>
+        <p>{{ test.proposition_3 }}</p>
+        <p>{{ test.proposition_4 }}</p>
+
+    </div>
+
+    <p> Souhaitez-vous apporter des changements ? </p>
+
+    <p> Validez-vous le contenu de cette proposition (en particulier la véracité du résultat) ? </p>
+
+{% empty %}
+
+    <p>Aucun test à traiter pour le moment.</p>
+
+{% endfor %}
+
+</form>
+  </body>
+</html>

@@ -7,9 +7,11 @@ def date_actuelle(request):
     return render(request, 'interfaceBDD/date.html', {'date': datetime.now()})
 
 def home(request):
-    questions = Question.objects.all()
-    return render(request, 'interfaceBDD/home.html', {'allQuestions': questions})
+    return render(request, 'interfaceBDD/home.html', {})
 
+def validation(request):
+    tests = Question.objects.all()
+    return render(request, 'interfaceBDD/verifieQuestion.html', {'allTests': tests})
 
 def addition(request, nombre1, nombre2):    
     total = int(nombre1) + int(nombre2)

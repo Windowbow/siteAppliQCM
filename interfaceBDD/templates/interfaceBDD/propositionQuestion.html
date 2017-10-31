@@ -2,6 +2,8 @@
   <head>
     <title></title>
     <meta content="">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href= "{% static "interfaceBDD/css/propositionQuestion.css" %} ">
     <style></style>
   </head>
   <body>
@@ -17,11 +19,21 @@
 
 <form action= {% url "prop" %} method="post">
 
-    {% csrf_token %}
+  {% csrf_token %}
 
-    {{ propQuestion.as_p }}
+    
+  <p><label for="id_question">Question :</label> <textarea name="question" required rows="10" cols="40" id="id_question">
+  </textarea></p>
+  <p><label for="id_proposition_1">Proposition 1 :</label> <textarea name="proposition_1" required rows="10" cols="40" id="id_proposition_1">
+  </textarea></p>
+  <p><label for="id_proposition_2">Proposition 2 :</label> <textarea name="proposition_2" required rows="10" cols="40" id="id_proposition_2">
+  </textarea></p>
+  <p><label for="id_proposition_3">Proposition 3 :</label> <textarea name="proposition_3" required rows="10" cols="40" id="id_proposition_3">
+  </textarea></p>
+  <p><label for="id_proposition_4">Proposition 4 :</label> <textarea name="proposition_4" required rows="10" cols="40" id="id_proposition_4">
+  </textarea></p>
 
-    <input type="submit" value="Submit" />
+  <input type="submit" value="Submit" />
 
 </form>
   </body>

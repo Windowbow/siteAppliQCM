@@ -8,5 +8,7 @@ class Question(models.Model):
     proposition_3 = models.TextField(null=True)
     proposition_4 = models.TextField(null=True)
     
+    nbPersonneValideTest = models.IntegerField(default=0)
+    
     def __str__(self):
         return self.question
