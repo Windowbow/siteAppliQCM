@@ -1,7 +1,13 @@
 from datetime import datetime
 from django.shortcuts import render
-from .models import Question
+from .models import Question, PropQuestion
 from .forms import PropositionForm
+
+class VerifQuestion(ListView):
+    model = PropQuestion
+    context_object_name = "lattestSubmittedQuestion"
+    template_name = 'interfaceBDD/verifieQuestion.html'
+    paginate_by = 5
 
 def date_actuelle(request):
     return render(request, 'interfaceBDD/date.html', {'date': datetime.now()})
